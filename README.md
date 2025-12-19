@@ -107,7 +107,7 @@
 1. Clone the repository:
 ```bash
 git clone https://github.com/balaji-29-s/medical-assistent-.git
-cd medical-assistant
+cd medical-assistant-
 ```
 
 2. Install dependencies:
