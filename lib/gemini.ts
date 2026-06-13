@@ -4,7 +4,7 @@ import { GoogleGenerativeAI } from "@google/generative-ai"
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || "")
 
 // Default model to use
-const defaultModel = "gemini-1.5-flash"
+const defaultModel = "gemini-2.5-flash"
 
 export async function generateGeminiResponse(prompt: string, systemPrompt?: string, model: string = defaultModel) {
   try {
@@ -36,7 +36,7 @@ export async function generateGeminiResponse(prompt: string, systemPrompt?: stri
 export async function generateGeminiResponseDirect(prompt: string) {
   try {
     const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${process.env.GEMINI_API_KEY}`,
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${process.env.GEMINI_API_KEY}`,
       {
         method: "POST",
         headers: {

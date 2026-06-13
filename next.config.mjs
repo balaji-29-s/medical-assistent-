@@ -1,8 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -14,15 +11,13 @@ const nextConfig = {
       bodySizeLimit: '10mb'
     }
   },
-  webpack: (config) => {
-    config.resolve.alias.canvas = false
-    return config
-  },
-  api: {
-    bodyParser: {
-      sizeLimit: '10mb'
+  turbopack: {
+    resolve: {
+      alias: {
+        canvas: false
+      }
     }
-  }
+  },
 }
 
 export default nextConfig
